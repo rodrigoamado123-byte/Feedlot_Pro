@@ -1,16 +1,11 @@
 {
   "name": "Feedlot Pro",
   "short_name": "Feedlot",
-  "start_url": "./feedlot_pro.html",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#eef3ec",
-  "theme_color": "#2f5d34",
+  "background_color": "#ffffff",
+  "theme_color": "#2e7d32",
   "icons": [
-    {
-      "src": "icono.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
     {
       "src": "icono.png",
       "sizes": "512x512",
