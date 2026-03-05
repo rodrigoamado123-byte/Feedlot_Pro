@@ -1,7 +1,8 @@
 {
   "name": "Feedlot Pro",
-  "short_name": "FeedlotPro",
-  "start_url": "/Feedlot_Pro/index.html",
+  "short_name": "Feedlot Pro",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2e7d32",
