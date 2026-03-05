@@ -1,27 +1,24 @@
-const cacheName = 'feedlot-pro-cache-v1';
-const assets = [
-  './feedlot_pro.html',
-  './vaca_angus.png',
-  './icono.png',
-  './manifest.json'
+const CACHE_NAME = "feedlot-pro-v1";
+
+const urlsToCache = [
+  "/Feedlot_Pro/",
+  "/Feedlot_Pro/index.html",
+  "/Feedlot_Pro/manifest.json",
+  "/Feedlot_Pro/icon.png"
 ];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(cacheName).then(cache => cache.addAll(assets))
+self.addEventListener("install", function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.addAll(urlsToCache);
+    })
   );
 });
 
-self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== cacheName).map(k => caches.delete(k)))
-    )
-  );
-});
-
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request))
+self.addEventListener("fetch", function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
   );
 });
